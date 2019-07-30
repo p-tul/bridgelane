@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel:700|Roboto:300');
+:root{
+    --main-bg-color: rgb(10, 10, 10);
+    --main-text-color: #b29e63;
+    --main-text-color-hover: #b29e63;
+    --main-highlight-color: #b29e63;
+    --secondary-bg-color: rgb(34, 37, 41) ;
+    --secondary-text-color: rgb(196, 196, 196);
+    --secondary-highlight-color: rgb(45, 49, 54);
+}
+
+*{
+    text-decoration: none;
+    color: var(--main-text-color);
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--main-bg-color);
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 4px;
+    font-size: 40px;
+}
+
+a:hover {
+    /* text-decoration: underline; */
+    color: var(--main-text-color-hover);
+}
+
+img {
+    width: 100%;
+}
+
+hr {
+    border-color: inherit;
+}
+
+ul {
+    list-style-type: none;
+}
+/* Utility Classes */
+
+.container {
+    max-width: 1180px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 5rem;
+}
+
+.btn {
+    padding: 10px 20px;
+    margin: 30px;
+    border-radius: 15px;
+    background: var(--secondary-highlight-color);
+}
+
+.btn:hover {
+    background: var(--secondary-bg-color);
+    border: 1px var(--main-text-color-hover) solid;
+    font-weight: 650;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+}
+
+/* FADE IN */
+
+/* make keyframes that tell the start state and the end state of our object */
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in {
+  opacity:0;  /* make things invisible upon start */
+  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+
+  -webkit-animation-delay: 0.7s;
+  -moz-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+
+
+/* SHOWCASE */
+#showcase{
+    background-image: url('../img/bar.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    /* padding: 0 20px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#showcase div {
+    background-color: var(--main-bg-color);
+    opacity: 0.75;
+    width: 100vw;
+    height: 100vh;
+}
+
+#showcase img {
+    background-color: transparent;
+    padding: 20px;
+    width: 80%;
+    display: block;
+    margin: auto;
+    margin-top: 45vh;
+}
+
+
+/* NAVBAR */
+nav {
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    line-height: 60px;
+    z-index: 3;
+    position: relative;
+    margin-bottom: -60px;
+    background: var(--main-bg-color);
+    opacity: .9;
+    border-bottom: 1px var(--main-text-color) solid;
+}
+
+#navbar ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav .icon {
+    display: none;
+}
+
+/* ABOUT */
+#about div {
+    padding: 4rem 0;
+    margin-top: 90px;
+}
+
+#about p {
+    padding: 20px;
+    color: var(--main-text-color);
+
+}
+
+#about ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+}
+
+
+/* Menu */
+#menu {
+    background-image: url(../img/lounge-1.jpg);
+    background-size: cover;
+    background-position: center;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
+
+#menu div {
+    background-color: var(--main-bg-color);
+    opacity: 0.7;
+    padding: 3rem;
+}
+
+#menu p {
+    padding: 20px;
+}
+
+
+/* Events */
+#events {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+#events p {
+    margin: 20px;
+}
+
+#events a {
+    display: inline-block;
+    margin: 30px;
+}
+
+.event-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem;
+}
+
+#events .event-img {
+    background-image: url(../img/events.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* #events img {
+    max-height: 400px;
+    width: auto;
+} */
+
+/* Contact */
+#contact {
+    background-image: url(../img/lounge-2.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    background-color: var(--main-bg-color);
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+
+#contact ul {
+    list-style-type: none;
+    margin: 0;
+
+}
+
+#contact-info {
+    background-color: var(--main-bg-color);
+    opacity: 0.8;
+    padding: 1rem;
+    line-height: 1.6;
+}
+
+/* CHRISTOPHER HANNA */
+#christopher-hanna {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 2fr 1fr;
+    margin-bottom: 60px;
+}
+
+#christopher-hanna h1 {
+    margin-top: 4rem;
+}
+
+#christopher-hanna p {
+    margin: 30px;
+}
+
+/* #christopher-hanna div:second-child {
+    vertical-align: middle;
+    max-width: 200px;
+} */
+
+
+  /* FOOTER */
+footer {
+    background-color: var(--secondary-bg-color);
+    margin: 20;
+    padding: 20;
+}
+
+footer div {
+    margin-bottom: 30px;
+}
+
+footer ul {
+    padding-top: 30px;
+    list-style: none;
+}
+
+footer a {
+    margin: 20px;
+    font-size: 2rem;
+}
+
+
+.footer-bottom {
+    font-size: 10px;
+    background-color: var(--secondary-bg-color);
+    text-align: center;
+    padding: 10px;
+  }
+
+
+
+
+
+  /* MEDIA QUERIES */
+
+  @media screen and (max-width: 600px) {
+    #contact, #christopher-hanna {
+        display: block;
+    }
+    .container {
+        padding: 1rem;
+    }
+    #showcase {
+        height: 60vh;
+    }
+    #showcase div {
+        height: 60vh;
+    }
+    nav {
+        display: none;
+    }
+    #about div {
+        margin: 0;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    #events .event-div{
+        display: block;
+    }
+  }
